@@ -7,6 +7,8 @@ public class LightButton extends JButton {
     private static final int MAXSIZE = 100;
     private int row = 0;
     private int col = 0;
+    private boolean isLit;
+    
     
     public LightButton (int r, int c){
         row = r;
@@ -17,12 +19,22 @@ public class LightButton extends JButton {
         setPreferredSize(size);
     }
     
+    public void reset() {
+		isLit = false;
+		setBackground(Color.BLACK);
+		setText("");
+		
+	}
+
+    
     public int getRow(){
         return row;
     }
     public int getCol(){
         return col;
     }
+    
+    
     
     public void turnOn(){
         setBackground(Color.RED);
